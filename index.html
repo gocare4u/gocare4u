@@ -135,34 +135,41 @@
         }
         .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
         
-        /* Improved Targeted fix for Firefox & General Mobile Overflow */
-        @-moz-document url-prefix() {
-          @media (max-width: 768px) {
-            .service-content, 
-            .service-toggle-bar {
-              width: calc(100vw - 2rem) !important; /* Fixes Firefox width overflow */
-              max-width: 100% !important;
-              margin-left: auto !important;
-              margin-right: auto !important;
-              box-sizing: border-box !important; /* Ensures borders don't add to width */
-            }
-            .service-content {
-              padding-left: 1rem !important;
-              padding-right: 1rem !important;
-            }
-          }
-        }
-        
-        /* Global fix for the Consultation section overflow */
+    /* Targeted Firefox Styling: Fixes Width, Text Size, and Icons */
+    @-moz-document url-prefix() {
+      @media (max-width: 768px) {
+        /* 1. Fix the width to prevent the 'lengthy' overflow */
+        .service-content, 
         .service-toggle-bar {
-            max-width: 100%;
-            box-sizing: border-box; /* Standardizes width calculation across all browsers */
+          width: calc(100vw - 32px) !important; 
+          margin-left: auto !important;
+          margin-right: auto !important;
+          box-sizing: border-box !important;
+        }
+    
+        /* 2. Make the text smaller inside the service bars */
+        .service-toggle-bar span.text-xl, 
+        .service-toggle-bar span.md\:text-4xl {
+          font-size: 1.15rem !important; /* Smaller text for mobile Firefox */
+          line-height: 1.2 !important;
+        }
+    
+        /* 3. Make the icons (the green eco-icons) smaller */
+        .service-toggle-bar .material-symbols-outlined {
+          font-size: 24px !important; /* Smaller icon size */
+        }
+    
+        /* 4. Fix the expand arrow size */
+        .expand-icon {
+          font-size: 20px !important;
         }
         
-        /* Global Safety Fix */
-        .service-toggle-bar, .service-content {
-            box-sizing: border-box !important;
+        /* 5. Adjust padding so it doesn't feel cramped */
+        .service-toggle-bar {
+          padding: 1rem !important;
         }
+      }
+    }
 
         
     </style>
