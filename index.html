@@ -573,9 +573,15 @@
                         <input class="w-full text-lg p-2 md:text-xl md:p-5 rounded-xl border-4 border-zinc-200 dark:border-zinc-700 dark:bg-zinc-900 focus:border-secondary transition-all" name="Phone" required type="text" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="Number only (0-9)" />
                     </div>
 
-                    <div>
+                    <!--<div>
                         <label class="block text-xl font-bold mb-3 dark:text-white">Home Address</label>
                         <input class="w-full text-lg p-2 md:text-xl md:p-5 rounded-xl border-4 border-zinc-200 dark:border-zinc-700 dark:bg-zinc-900" name="Address" required type="text" placeholder="Where do you live?"/>
+                    </div>-->
+
+                    <div>
+                        <label class="block text-xl font-bold mb-3 dark:text-white">Home Address</label>
+                        <input class="w-full text-lg p-2 md:text-xl md:p-5 rounded-xl border-4 border-zinc-200 dark:border-zinc-700 dark:bg-zinc-900" name="Address" required type="text" 
+                            autocomplete="street-address" placeholder="Where do you live?" />
                     </div>
 
                     <div>
